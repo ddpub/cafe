@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<locale name="russian rus">
+
+	<currency symbol="p." placement="postfix" fractionsize="2" />
+
+	<floatnumber decimalseparator="." thousandseparator="," negativesign="minus" />
+	
+	<datetime_format date_format="dd.MM.yy" time_format="hh:mm:ss"/>
+	
+	<datetime_format_short date_format="dd.MM.yy" time_format="hh:mm:ss"/>
+
+	<phonenumber template="xxx-xxx-xxxx" />
+	
+	<virtualkeyboard name="ru">
+		<key name="1" val="1"/>
+		<key name="2" val="2"/>
+		<key name="3" val="3"/>
+		<key name="4" val="4"/>
+		<key name="5" val="5"/>
+		<key name="6" val="6"/>
+		<key name="7" val="7"/>
+		<key name="8" val="8"/>
+		<key name="9" val="9"/>
+		<key name="0" val="0"/>
+		<key name="-" val="-"/>
+		<key name="=" val="="/>
+
+		<key name="q" val="й"/>
+		<key name="w" val="ц"/>
+		<key name="e" val="у"/>
+		<key name="r" val="к"/>
+		<key name="t" val="е"/>
+		<key name="y" val="н"/>
+		<key name="u" val="г"/>
+		<key name="i" val="ш"/>
+		<key name="o" val="щ"/>
+		<key name="p" val="з"/>
+		<key name="[" val="х"/>
+		<key name="]" val="ъ"/>
+		
+		<key name="a" val="ф"/>
+		<key name="s" val="ы"/>
+		<key name="d" val="в"/>
+		<key name="f" val="а"/>
+		<key name="g" val="п"/>
+		<key name="h" val="р"/>
+		<key name="j" val="о"/>
+		<key name="k" val="л"/>
+		<key name="l" val="д"/>
+		<key name=";" val="ж"/>
+		<key name="'" val="э"/>
+		<key name="&apos;" val="&apos;"/>
+		
+		<key name="z" val="я"/>
+		<key name="x" val="ч"/>
+		<key name="c" val="с"/>
+		<key name="v" val="м"/>
+		<key name="b" val="и"/>
+		<key name="n" val="т"/>
+		<key name="m" val="ь"/>
+		<key name="," val="б"/>
+		<key name="." val="ю"/>
+		<key name="/" val="."/>
+		
+		<key name="!" val="!"/>
+		<key name="&amp;" val="quot;"/>
+		<key name="#" val="№"/>
+		<key name="$" val=";"/>
+		<key name="%" val="%"/>
+		<key name="^" val=":"/>
+		<key name="&amp;" val="?"/>
+		<key name="*" val="*"/>
+		<key name="(" val="("/>
+		<key name=")" val=")"/>
+		<key name="_" val="_"/>
+		<key name="+" val="+"/>
+		
+		<key name="Q" val="Й"/>
+		<key name="W" val="Ц"/>
+		<key name="E" val="У"/>
+		<key name="R" val="К"/>
+		<key name="T" val="Е"/>
+		<key name="Y" val="Н"/>
+		<key name="U" val="Г"/>
+		<key name="I" val="Ш"/>
+		<key name="O" val="Щ"/>
+		<key name="P" val="З"/>
+		<key name="{" val="Х"/>
+		<key name="}" val="Ъ"/>
+		
+		<key name="A" val="Ф"/>
+		<key name="S" val="Ы"/>
+		<key name="D" val="В"/>
+		<key name="F" val="А"/>
+		<key name="G" val="П"/>
+		<key name="H" val="Р"/>
+		<key name="J" val="О"/>
+		<key name="K" val="Л"/>
+		<key name="L" val="Д"/>
+		<key name=":" val="Ж"/>
+		<key name="quot;" val="Э"/>
+		<key name="|" val="/"/>
+		
+		<key name="Z" val="Я"/>
+		<key name="X" val="Ч"/>
+		<key name="C" val="С"/>
+		<key name="V" val="М"/>
+		<key name="B" val="И"/>
+		<key name="N" val="Т"/>
+		<key name="M" val="Ь"/>
+		<key name="&lt;" val="Б"/>
+		<key name="&gt;" val="Ю"/>
+		<key name="?" val=","/>
+	</virtualkeyboard>
+
+	<application name="hr_manager">
+		<form name="HR_f">
+			<control name="btn_add" val="Нанять"/>
+			<control name="btn_del" val="Удалить"/>
+			<control name="btn_fire" val="Уволить"/>
+			<control name="btn_rehire" val="Нанять заново"/>
+			<control name="btn_unlock" val="Разблокировать"/>
+			<control name="btn_edit" val="Редактировать"/>
+			<control name="cc" val="¢5"/> 
+			
+			<control name="active" val="Активные"/>
+			<control name="fired" val="Уволенные"/>
+			<control name="login" val="Логин"/>
+			<control name="firstname" val="Имя"/>
+			<control name="lastname" val="Фамилия"/>
+			<control name="surname" val="Отчество"/>
+			<control name="birthdate" val="Дата рождения"/>
+			<control name="person" val="Пользователи"/>
+			<control name="position" val="Должности и роли"/>
+			<control name="property" val="Параметры"/>
+			<control name="about" val="О программе"/>
+			<control name="cafe_f" val="Фильтр по кафе"/>
+			<control name="role_f" val="Фильтр по ролям"/>
+			<control name="add_pos" val="Добавить"/>
+			<control name="edit_pos" val="Редактировать"/>
+			<control name="del_pos" val="Удалить"/>
+			<control name="apply" val="Применить"/>
+			<control name="btn_add1" val="Нанять"/>
+			<control name="btn_add2" val="Нанять"/>
+			<control name="btn_add3" val="Нанять"/>
+			<control name="btn_add4" val="Нанять"/>
+			<control name="btn_add5" val="Нанять"/>
+			<control name="birthday" val="День рождения"/>
+			<control name="caption" val="HRManager"/>
+			
+			<control name="bmp_load" val="Загрузить изображение"/>
+			<control name="bmp_clear" val="Удалить изображение"/>
+			
+			<control name="select_usr" val="Выберите пользователя"/>
+			<control name="dont_admin" val="У вас недостаточно привилегий"/>
+			<control name="error_del_pers" val="Существую пользователи с этой должностью"/>
+			<control name="is_del_question" val="Вы уверены?"/>
+			
+			<control name="cafe_filter" val="Фильтр по кафе"/>
+			<control name="role_filter" val="Фильтр по ролям"/>
+							
+		</form> 
+		<form name="person_f">
+			<control name="login" val="Логин"/>
+			<control name="firstname" val="Имя"/>
+			<control name="lastname" val="Фамилия"/>
+			<control name="surname" val = "Отчество"/>
+			<control name="birthday" val="День рождения"/>
+			<control name="state" val="Штат"/>
+			<control name="position" val="Должность"/>
+			<control name="password" val="Пароль"/>
+			<control name="zip" val="Индекс"/>
+			<control name="ssn" val="ИНН"/>
+			<control name="address1" val="Адрес 1"/>
+			<control name="address2" val="Адрес 2"/>
+			<control name="ok" val = "Ок"/>
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Детали сотрудника"/>
+			<control name="photo" val="Фото"/>
+			<control name="ename" val="Адрес для ЧС"/>
+			<control name="ephone" val="Телефон для ЧС"/>
+			<control name="phone_home" val="Домашний телефон"/>
+			<control name="phone_business" val="Рабочий телефон"/>
+			<control name="phone_cell" val="Рабочий телефон"/>
+			<control name="null_pos" val="Должность должна быть назначена"/>
+			<control name="null_hire" val="Дата принятия на работу должна быть заполнена"/>
+			<control name="null_login" val="Неверный логин"/>
+			<control name="null_pwd" val="Неверный пароль"/>
+			<control name="descr" val="Дополнительное описание"/>
+			<control name="c_password" val="Пароль еще раз"/>
+			<control name="write_m_card" val="Записать пароль на магнитную карту"/>
+			<control name="pers_cafe" val="Работа в заведении"/>
+			<control name="pers_role" val="Роли"/>
+			<control name="hire" val="Работает с"/>
+			<control name="city" val="Город"/>
+			<control name="mail_business" val="Рабочий e-mail"/>
+			<control name="mail_private" val="Личный e-mail"/>
+			<control name="write_mcard" val="Записать на магнитную карту"/>
+			
+			<control name="null_login" val="Логин должен быть задан"/>
+			<control name="null_pwd" val="Пароль должен быть задан"/>
+			<control name="err_pwd" val="Некорректный пароль"/>
+			<control name="null_pos" val="Должность должна быть задана"/>
+			<control name="null_hire" val="Дата приема на работу должна быть задана"/>
+			
+		</form>
+		<form name="filter_f">
+			<control name="caption_cafe" val="Фильтр по кафе"/>
+			<control name="caption_role" val="Фильтр по ролям"/>
+			<control name="ok" val="Ок"/>
+			<control name="cancel" val="Отмена"/>
+		</form> 
+		<form name="addpos_f">
+			<control name="pos_name" val="Название должности"/>
+			<control name="caption" val="Новая должность"/>
+			<control name="ok" val="Ок"/>
+			<control name="cancel" val="Отмена"/>
+			<control name="pos_error" val="Введите название должности"/>
+		</form> 
+		<form name="prop_f">
+			<control name="ok" val="Ок"/>
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Настройки"/>
+			<control name="lang_ck" val="Загрузить языковой файл"/>
+			<control name="loc_file" val="Файл"/>
+			<control name="locale_name" val="Локаль"/>
+			<control name="good_MSR_test" val="MSR206 Найден"/>
+			<control name="com_port" val="COM порт"/>
+			
+		</form> 
+		<form name="errors">
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Настройки"/>
+			<control name="lang_ck" val="Загрузить языковой файл"/>
+			<control name="loc_file" val="Файл"/>
+			<control name="locale_name" val="Локаль"/>
+			<control name="empty_login" val="Пустой login недопустим"/>
+			<control name="empty_pwd" val="Пустой пароль недопустим"/>
+			<control name="empty_host" val="Пустой хост недопустим"/>
+			<control name="com_init" val="Невозможно проинициализировать COM-порт"/>
+			<control name="write_card_try_adain" val="Произошла ошибка записи карты.Нажмите Ок и повторите попытку."/>
+			<control name="write_card_error" val="Произошла ошибка записи карты.Нажмите Ок и повторите попытку."/>
+			<control name="MSR_not_found" val="MSR206 Не найден"/>
+			<control name="cannt_read_com" val="Невозможно прочитать данные из COM-порта"/>
+			<control name="cannt_open_com" val="Невозможно открыть COM-порт"/>
+			<control name="swipe_card" val="Прокатайте карточку в MSR206 и нажмите Ок"/>
+			<control name="usr_not_found" val="Пользователь не найден"/>	
+			<control name="com_notvalid" val="COM-порт недоступен для записи карточки"/>	
+		</form> 
+			
+		<form name="auth_f">
+			<control name="ok_btn" val="Ok"/>
+			<control name="cancel_btn" val="Отмена"/>
+			<control name="show_kbd_btn1" val="Показать клавиатуру"/>
+			<control name="show_kbd_btn2" val="Убрать клавиатуру"/>
+			<control name="advanced_btn1" val="Подробно &gt;&gt;"/>
+			<control name="advanced_btn2" val="Подробно &lt;&lt;"/>
+			<control name="login_lb" val="имя:"/>
+			<control name="password_lb" val="пароль:"/>
+			<control name="host_lb" val="сервер:"/>
+			<control name="login_message_lb1" val="проведите карточку для входа"/>
+			<control name="login_message_lb2" val="введите имя и пароль для входа"/>
+		
+			<control name="empty_login_msg" val="Не введено имя"/>
+			<control name="empty_password_msg" val="Не введен пароль"/>
+			<control name="empty_host_msg" val="Не введен сервер"/>
+		</form>
+		
+		
+		<form name="position_f">
+			<control name="pos_name" val="Название должности" />
+			<control name="roles_lb" val="Роли" />
+			<control name="caption" val="Редактирование должности" />
+			<control name="pos_error" val="Введите название должности" />
+		</form>
+		<form name="addpos_f">
+			<control name="pos_name" val="Название должности" />
+			<control name="roles_lb" val="Роли" />
+			<control name="caption" val="Редактирование должности" />
+			<control name="pos_error" val="Введите название должности" />
+		</form>
+	</application>
+</locale>
+

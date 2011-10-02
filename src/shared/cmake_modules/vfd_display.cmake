@@ -1,0 +1,19 @@
+
+IF (SOURCE_FILES)
+	execute_process(COMMAND cmake -DSOURCE_FILES=1 -G${CMAKE_GENERATOR} WORKING_DIRECTORY $ENV{CAFE_SRC}/shared/vfd_display)		
+	RETURN()
+ELSE (SOURCE_FILES)
+ENDIF (SOURCE_FILES)
+
+FIND_LIBRARY (VFD_LIB NAMES vfd-s PATHS $ENV{CAFE_SRC}/shared/vfd_display)
+
+IF (NOT VFD_LIB)
+	MESSAGE (STATUS "try_compile vfd lib")
+	TRY_COMPILE (BUILD_VFD $ENV{CAFE_SRC}/shared/vfd_display $ENV{CAFE_SRC}/shared/vfd_display VFDLibrary CMAKE_FLAGS -DSOURCE_FILES:UNINITIALIZED=0)
+
+	IF (NOT BUILD_VFD)
+		MESSAGE (FATAL_ERROR "can't build vfd lib")
+	ELSE (NOT BUILD_VFD)
+		MESSAGE (STATUS "compile vfd lib successful")
+	ENDIF (NOT BUILD_VFD)
+ENDIF (NOT VFD_LIB)

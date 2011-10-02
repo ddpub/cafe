@@ -1,0 +1,19 @@
+
+IF (SOURCE_FILES)
+	execute_process(COMMAND cmake -DSOURCE_FILES=1 -G${CMAKE_GENERATOR} WORKING_DIRECTORY $ENV{CAFE_SRC}/shared/wx_report/reportvwr)		
+	RETURN()
+ELSE (SOURCE_FILES)
+ENDIF (SOURCE_FILES)
+
+FIND_LIBRARY (REPORTVIEWER_LIB NAMES wxreportviewer-s PATHS $ENV{CAFE_SRC}/shared/wx_report/reportvwr)
+
+IF (NOT REPORTVIEWER_LIB)
+	MESSAGE (STATUS "try_compile wxreport lib")
+	TRY_COMPILE (BUILD_REPORTVIEWER $ENV{CAFE_SRC}/shared/wx_report/reportvwr $ENV{CAFE_SRC}/shared/wx_report/reportvwr wxReportViewerLibrary CMAKE_FLAGS -DSOURCE_FILES:UNINITIALIZED=0)
+
+	IF (NOT BUILD_REPORTVIEWER)
+		MESSAGE (FATAL_ERROR "can't build reportviewer lib")
+	ELSE (NOT BUILD_REPORTVIEWER)
+		MESSAGE (STATUS "compile reportviewer lib successful")
+	ENDIF (NOT BUILD_REPORTVIEWER)
+ENDIF (NOT REPORTVIEWER_LIB)

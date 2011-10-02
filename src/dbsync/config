@@ -1,0 +1,6 @@
+main=lpgrill.ksi.ru
+type_main=postgres
+local=172.16.67.3
+type_local=postgres
+db=1
+refresh=10

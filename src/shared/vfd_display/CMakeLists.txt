@@ -1,0 +1,51 @@
+
+SET (C_FILES 
+	${CMAKE_CURRENT_SOURCE_DIR}/customer_display.cpp)
+SET (H_FILES 
+	${CMAKE_CURRENT_SOURCE_DIR}/customer_display.hpp $ENV{CAFE_SRC}/shared/serial/com.hpp)
+SET (OTHER_FILES 
+	${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt)
+
+IF (SOURCE_FILES)
+	foreach(file ${C_FILES} ${H_FILES} ${OTHER_FILES})        
+		MESSAGE (STATUS "!@# ${file}")
+	endforeach(file)
+	SET (SOURCE_FILES 0)
+	RETURN()
+ENDIF (SOURCE_FILES)
+
+PROJECT (VFDLibrary)
+CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
+
+INCLUDE ($ENV{CAFE_SRC}/shared/cmake_modules/serial.cmake)
+	
+IF(WIN32)
+	ADD_DEFINITIONS (-D_WIN32_BUILD_)
+ENDIF (WIN32)
+
+IF (UNIX)
+	ADD_DEFINITIONS (-D_UNIX_BUILD_)
+ENDIF (UNIX)
+
+FIND_LIBRARY (SERIAL_LIB NAMES serial-s PATHS $ENV{CAFE_SRC}/shared/serial)
+
+IF (NOT SERIAL_LIB)
+	MESSAGE (FATAL_ERROR "serial lib not found")
+ENDIF (NOT SERIAL_LIB)
+
+MESSAGE (STATUS "serial lib found: ${SERIAL_LIB}")
+
+
+INCLUDE_DIRECTORIES ($ENV{CAFE_SRC}/shared)
+
+IF (WIN32)
+LINK_LIBRARIES (${SERIAL_LIB})
+ENDIF (WIN32)
+
+IF (UNIX)
+LINK_LIBRARIES (${SERIAL_LIB})
+ENDIF (UNIX)
+
+#add_library(vfd SHARED ${C_FILES})
+#target_link_libraries(vfd ${SERIAL_LIB})
+add_library(vfd-s ${C_FILES})

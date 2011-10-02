@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+	<server port="703"/>
+	<log dir="./logs" file=""/>
+	<printer1 port="COM8" baud_rate="9600" command_set="NULL"/>

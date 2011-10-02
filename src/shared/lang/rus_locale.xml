@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<locale name="russian rus">
+	<currency symbol="р." placement="postfix" fractionsize="2"/>
+	<floatnumber decimalseparator="." thousandseparator="," negativesign="-"/>
+	<datetime_format date_format="dd.MM.yy" time_format="HH:mm:ss"/>
+	<datetime_format_short date_format="dd.MM.yy" time_format="HH:mm"/>
+	<phonenumber template="xxx-xxx-xxxx" />
+	
+	<virtualkeyboard name="ru">
+		<key name="1" val="1"/>
+		<key name="2" val="2"/>
+		<key name="3" val="3"/>
+		<key name="4" val="4"/>
+		<key name="5" val="5"/>
+		<key name="6" val="6"/>
+		<key name="7" val="7"/>
+		<key name="8" val="8"/>
+		<key name="9" val="9"/>
+		<key name="0" val="0"/>
+		<key name="-" val="-"/>
+		<key name="=" val="="/>
+
+		<key name="q" val="й"/>
+		<key name="w" val="ц"/>
+		<key name="e" val="у"/>
+		<key name="r" val="к"/>
+		<key name="t" val="е"/>
+		<key name="y" val="н"/>
+		<key name="u" val="г"/>
+		<key name="i" val="ш"/>
+		<key name="o" val="щ"/>
+		<key name="p" val="з"/>
+		<key name="[" val="х"/>
+		<key name="]" val="ъ"/>
+		
+		<key name="a" val="ф"/>
+		<key name="s" val="ы"/>
+		<key name="d" val="в"/>
+		<key name="f" val="а"/>
+		<key name="g" val="п"/>
+		<key name="h" val="р"/>
+		<key name="j" val="о"/>
+		<key name="k" val="л"/>
+		<key name="l" val="д"/>
+		<key name=";" val="ж"/>
+		<key name="'" val="э"/>
+		<key name="&apos;" val="&apos;"/>
+		
+		<key name="z" val="я"/>
+		<key name="x" val="ч"/>
+		<key name="c" val="с"/>
+		<key name="v" val="м"/>
+		<key name="b" val="и"/>
+		<key name="n" val="т"/>
+		<key name="m" val="ь"/>
+		<key name="," val="б"/>
+		<key name="." val="ю"/>
+		<key name="/" val="."/>
+		
+		<key name="!" val="!"/>
+		<key name="&amp;" val="quot;"/>
+		<key name="#" val="№"/>
+		<key name="$" val=";"/>
+		<key name="%" val="%"/>
+		<key name="^" val=":"/>
+		<key name="&amp;" val="?"/>
+		<key name="*" val="*"/>
+		<key name="(" val="("/>
+		<key name=")" val=")"/>
+		<key name="_" val="_"/>
+		<key name="+" val="+"/>
+		
+		<key name="Q" val="Й"/>
+		<key name="W" val="Ц"/>
+		<key name="E" val="У"/>
+		<key name="R" val="К"/>
+		<key name="T" val="Е"/>
+		<key name="Y" val="Н"/>
+		<key name="U" val="Г"/>
+		<key name="I" val="Ш"/>
+		<key name="O" val="Щ"/>
+		<key name="P" val="З"/>
+		<key name="{" val="Х"/>
+		<key name="}" val="Ъ"/>
+		
+		<key name="A" val="Ф"/>
+		<key name="S" val="Ы"/>
+		<key name="D" val="В"/>
+		<key name="F" val="А"/>
+		<key name="G" val="П"/>
+		<key name="H" val="Р"/>
+		<key name="J" val="О"/>
+		<key name="K" val="Л"/>
+		<key name="L" val="Д"/>
+		<key name=":" val="Ж"/>
+		<key name="quot;" val="Э"/>
+		<key name="|" val="/"/>
+		
+		<key name="Z" val="Я"/>
+		<key name="X" val="Ч"/>
+		<key name="C" val="С"/>
+		<key name="V" val="М"/>
+		<key name="B" val="И"/>
+		<key name="N" val="Т"/>
+		<key name="M" val="Ь"/>
+		<key name="&lt;" val="Б"/>
+		<key name="&gt;" val="Ю"/>
+		<key name="?" val=","/>
+	</virtualkeyboard>
+	
+	<application name="shared">
+		<form name="db_exception">
+			<!-- <control name="fake" val="fake"/> -->
+			<control name="invalid_username_password" val="Неверный логин или пароль"/>
+		</form>
+		<form name="receipt">
+			<control name="merchant_copy_str" val="** Копия заведения **"/>
+			<control name="customer_copy_str" val="** Копия клиента **"/>
+			<control name="receipt_duplicate_str" val="** Дубликат **"/>
+			<control name="cafe_copy_str" val=""/>
+			<control name="refund_str" val="** Возврат **"/>
+			<control name="employee_signature_str" val="Подпись сотрудника"/>
+			<control name="customer_signature_str" val="Подпись клиента"/>
+		</form>
+	</application>
+		
+	<template name="table_booking_message">
+		<text>Принято </text><prepayment_amount/><text> В качестве предоплаты за заказ стола</text>
+		<endl/>
+		<text>Стол заказан на </text><date_time/><text> на имя </text><customer_name/><text> т. </text><customer_phone/>
+	</template>
+	
+	<template name="table_booking_message_eng">
+		<prepayment_amount/><text> is taken for table booking as order prepayment. Table booked on </text>
+		<date_time/><text> from </text><customer_name/><text>, phone :</text><customer_phone/>
+	</template>
+	
+	<template name="order_list">
+		<text>Заказ #</text><order_id/><text>&#160;</text><type_name/><text>&#160;</text><order_status/><endl/>
+		<endl/>
+		<text>Обслуживается </text><creator/><endl/>
+		<text>Принят в </text><created/><endl/>
+		<text>Сумма заказа </text><gross/><text>, Гостей: </text><guest_count/>
+	</template>
+	
+	<template name="delayed_order_list">
+		<text>Заказ #</text><order_id/><text>&#160;</text><order_status/><endl/>
+		<text>Обслуживается </text><creator/><endl/>
+		<text>Принят в </text><created/><endl/>
+		<text>Сумма заказа: </text><gross/>
+		<text>. Гостей: </text><guest_count/>
+		<if comp="not equal" var="prepayment_type_id" val="0" type="int">
+			<text>, Предоплата </text><prepayment/>
+		</if>
+		<endl/>
+		<if comp="equal" var="type_id" val="3" type="int">
+			<text>Доставка </text><delivery_date/><endl/>
+			<customer_fio/><endl/>
+			<streetaddress/><text>&#160;</text>
+		</if>
+		<elseif comp="equal" var="type_id" val="4" type="int">
+			<text>Pick up on </text><delivery_date/><endl/>
+			<text>to </text><customer_fio/>
+		</elseif>
+		<elseif comp="equal" var="type_id" val="6" type="int">
+			<text>Заказ на </text><delivery_date/><endl/>
+			<text>для </text><customer_fio/>
+		</elseif>
+		<else>
+			<null/>
+		</else>
+	</template>
+
+	<template name="delayed_order_list_eng">
+		<text>Order #</text><order_id/><text>&#160;</text><order_status/><endl/>
+		<text>Created by </text><creator/><endl/>
+		<text>Accepted on </text><created/><endl/>
+		<text>Subtotal: </text><subtotal/>
+		<if comp="not equal" var="prepayment_type_id" val="0" type="int">
+			<text>, prepayment </text><prepayment/>
+		</if>
+		<endl/>
+		<if comp="equal" var="type_id" val="3" type="int">
+			<text>Delivery on </text><delivery_date/><endl/>
+			<text>to </text><customer_fio/><endl/>
+			<streetaddress/><text>&#160;</text><city/><text>&#160;</text><state/><text>&#160;</text><zip/>
+		</if>
+		<elseif comp="equal" var="type_id" val="4" type="int">
+			<text>Pick up on </text><delivery_date/><endl/>
+			<text>to </text><customer_fio/>
+		</elseif>
+		<elseif comp="equal" var="type_id" val="6" type="int">
+			<text>Booked to </text><delivery_date/><endl/>
+			<text>to </text><customer_fio/>
+		</elseif>
+		<else>
+			<null/>
+		</else>
+	</template>
+	
+<application name="cashier">
+		<form name="payment_f">
+			<control name="cash_btn" val="Наличные"/>
+			<control name="credit_card_btn" val="КК"/>
+			<control name="check_btn" val="Чек"/>
+		</form>
+		<form name="auth_f">
+			<control name="ok_btn" ref="global::OK_BTN"/>
+			<control name="cancel_btn" ref="global::CANCEL_BTN"/>
+			<control name="show_kbd_btn1" val="Показать клавиатуру"/>
+			<control name="show_kbd_btn2" val="Убрать клавиатуру"/>
+			<control name="advanced_btn1" val="Подробно &gt;&gt;"/>
+			<control name="advanced_btn2" val="Подробно &lt;&lt;"/>
+			<control name="login_lb" val="имя:"/>
+			<control name="password_lb" val="пароль:"/>
+			<control name="host_lb" val="сервер:"/>
+			<control name="login_message_lb1" val="проведите карточку для входа"/>
+			<control name="login_message_lb2" val="введите имя и пароль для входа"/>
+		
+			<control name="empty_login_msg" val="Не введено имя"/>
+			<control name="empty_password_msg" val="Не введен пароль"/>
+			<control name="empty_host_msg" val="Не введен сервер"/>
+		</form>
+		
+		<form name="cashier_f">
+			<control name="save_and_hide_btn" val="Сохранить из скрыть заказ"/>
+			<control name="logout_btn" val="Заблокировать"/>
+			<control name="browse_delayed_orders_btn" val="Просмотр отложенных заказов"/>
+			<control name="open_cash_drawer_btn" val="Открыть денежный ящик"/>
+			<control name="sg_entree" val="Блюдо"/>
+			<control name="sg_price" val="Цена"/>
+			<control name="sg_qty" val="Кол."/>
+			<control name="sg_amount" val="Стоимость"/>
+			<control name="m_subtotal_lb" val="Subtotal:"/>
+			<control name="m_sales_tax_lb" val="Sales tax:"/>
+			<control name="m_total_lb" val="Итого:"/>
+			<control name="comment_entree_btn" val="Коментарий к блюду"/>
+			<control name="for_here_btn" val="Здесь"/>
+			<control name="to_go_btn" val="На вынос"/>
+			<control name="delivery_btn" val="Доставка"/>
+			<control name="pickup_btn" val="Пикап"/>			
+			<control name="employee_meal_btn" val="Питание сотрудников"/>
+			<control name="donation_btn" val="Пожертвования"/>
+			<control name="misc_charges_btn" val="Доп. оплаты"/>
+			<control name="entree_code_btn" val="Поиск блюда по коду"/>
+			<control name="token_btn1" val="Токен"/>
+			<control name="token_btn2" val="не выбран"/>
+			<control name="delayed_order_details_btn" val="Детали отложенных заказов"/>
+			<control name="refund_order_btn" val="Работа с закрытыми заказами"/>
+			<control name="cash_advance_btn1" val="Открытые траты"/>
+			<control name="cash_advance_btn2" val=""/>
+			<control name="process_btn" val="Закрыть заказ"/>
+			<control name="menu_select_btn" val="Выбор меню"/>
+			<control name="shift_btn" val="Фискальные смены"/>
+			<control name="discount_btn" val="Скидки"/>
+			
+			<control name="tools_lb_devliery_fee_str" val="Плата за доставку"/>
+			<control name="tools_lb_employee_str" val="Сотрудник: "/>
+			<control name="select_coupon_discout_str" val="Выбирите скидку"/>
+			<control name="coupon_msg1" val="Зеленым отмечены доступные скидки к заказу. Красным не доступные. Желтым системные скидки."/>
+			<control name="add_misc_chage_str" val="Добавление платы за обслуживание."/>
+			<control name="charge_shot_description_str" val="Описание"/>
+			<control name="comment_entree_str" val="Коментарий к блюду"/>
+			<control name="close_order_management_str" ref="cashier_f::refund_order_btn"/>
+			
+			<control name="terminal_not_register_msg" val="Этот терминал не внесен в смену или смена не запущена."/>
+		</form>
+		
+		<form name="global">
+			<control nam="prep_order_str" val="Вы уверены, что блюдо успеют приготовить и/или доставить?"/>
+			<control name="required_delayed_order_properties_str" val="Заполните обязательные поля отложенного заказа"/>
+			<control name="order_subtotal_precent_str" val="Процент с суммы"/>
+			<control name="specified_amount_str" val="Конкретную сумму"/>
+			<control name="charge_cancel_fee_str" val="Удержать часть предоплаты"/>
+			<control name="do_not_charge_anything_str" val="Не удерживать часть предоплаты"/>
+		
+			<control name="delayed_order_cancel_str" val="Отмена отложеного заказа"/>
+			<control name="type_cash" val="Наличные"/>
+			<control name="type_cc" val="КК"/>
+
+			<control name="this_will_cancel_the_prepayment_continue_str" val="Предоплата будет отменена. Продолжить?"/>
+			<control name="maximum_prepayment_amount_is_str" val="Максимально возможная предоплата "/>
+			<control name="Su" val="Вс"/>
+			<control name="Mo" val="Пн"/>
+			<control name="Tu" val="Вт"/>
+			<control name="We" val="Ср"/>
+			<control name="Th" val="Чт"/>
+			<control name="Fr" val="Пт"/>
+			<control name="Sa" val="Сб"/>
+			
+			<control name="minutes_str" val="Минуты"/>
+			<control name="hours_str" val="Часы"/>
+			
+
+			<control name="pick_the_delivery_date_str" val="Выберите дату доставки"/>
+			<control name="pick_the_delivery_time_str" val="Выбрерите время доставки"/>
+			<control name="OK_BTN" val="Ok"/>
+			<control name="CANCEL_BTN" val="Отмена"/>
+			<control name="PROCESS_BTN" val="Оплтатить"/>
+			<control name="employee_form_footer_str" val="Для замены сотрудника нажмите ещё раз это кнопку"/>
+			<control name="employee_selection_for_employee_mail_str" val="Выбирите сотрудника"/>
+			<control name="waste_entree_str" val="списать блюдо продукты, ингредиетны"/>
+			<control name="cancel_str" ref="auth_f::cancel_btn"/>
+			<control name="swipe_employee_card_str" val="провести карточку сотрудника"/>
+			<control name="select_employee_from_list_str" val="Выбрать сотрудника из списка"/>
+			<control name="unregistered_user_str" val="&lt;Не зарегистрированный сотрудник&gt;"/>
+			<control name="type_the_employee_name_str" val="Введите имя сотрудника"/>
+			<control name="entry_in_stop_list_since_str" val="Блюдо в стоп листе с "/>
+			<control name="s_till_s_str" val=" по "/>
+			<control name="AUTHORIZE_CC_str" val="Авторизовать Кредитную Карту"/>
+			<control name="Manual_entry_str" val="Ввести в ручную"/>
+			<control name="credit_card_payment_str" val="Оплата кредитной картой"/>
+			<control name="communication_with_processing_server_please_wait" val="Идет обработка запроса процессинговым центром, подождите."/>
+			<control name="credit_card_auth_has_been_void" val="Авторизация была отменена"/>
+			<control name="Order_str" val="Заказ"/>
+			<control name="has_been_successfully created_str" val=" был успешно создан."/>
+			<control name="order_total_is_str" val="Сумма заказа "/>
+			<control name="change_is_str" val="Сдача "/>
+			<control name="order_created_str" val="Заказ успешно создан"/>
+			<control name="Settings_str" val="Настройки"/>
+			<control name="select_a_token_str" val="Выбор токена"/>
+			<control name="type_entree_code_str" val="Введите код блюда"/>
+			<control name="entree_not_found_str" val="Блюдо не найдено"/>
+			<control name="select_modifiers_str" val="Выбирите модификаторы"/>
+			<control name="Cash_advance_str" val="Траты наличными"/>
+			<control name="delayed_order_list_str" val ="Список отложенных заказов"/>
+			<control name="order_load_str" val="Загрузка заказа"/>
+			<control name="please_wait_str" val="Ожидайте"/>
+			<control name="delayed_order_details_str1" val="Детали отложенного заказа"/>
+			<control name="delayed_order_details_str2" val=""/>
+			<control name="manager_auth_required_str" val="Требуется авторизация менеджера"/>
+			<control name="swipe_your_magnetic_card_to_sign_in_str" ref="auth_f::login_message_lb1"/>
+			<control name="tpye_your_login_and_password_str" ref="auth_f::login_message_lb2"/> 
+			<control name="unlock_application_str" val="Приложение заблокировано"/>
+			<control name="menu_root_str" val="&lt;корень меню&gt;"/>
+			<control name="next_str" val="след. &gt;&gt;"/>
+			<control name="prev_str" val="пред. &lt;&lt;"/>
+			<control name="order_not_found_str" val="Заказ не найден"/>
+			<control name="adjustable_discount_str" val="Скидка менеджера к заказу"/>
+			<control name="specify_number_of_discount_coupons_str" val="Введите количество купонов"/>
+			<control name="discount_in_percent_str" val="Скидка в процентах"/>
+			<control name="discount_in_doll_str" val="скидка в рублях"/>
+			<control name="cancel_auth_msg" val="Прекратить авторизацию?"/>
+			<control name="select_a_menu_str" val="Выберите меню"/>
+			<control name="reload_all_menus_str" val="Перечитать все меню"/>
+		</form>
+
+		<form name="add_modifiers_f">
+			<control name="ok_btn" val="Ok"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="sg_group_modifier" val="Группа/Модификатор"/>
+			<control name="sg_qty" ref="cashier_f::sg_qty"/>
+			<control name="select_modifiers_for_the_str1" val="Выберите модификаторы для блюда &quot;"/>
+			<control name="select_modifiers_for_the_str2" val="&quot;"/>
+		</form>
+
+		<form name="coupon_calc_f">
+			<control name="clear_btn" val="Очитсить"/>
+			<control name="ok_btn" ref="auth_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+
+		<form name="manual_entry_f">
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+			<control name="ok_btn" ref="coupon_calc_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+		<form name="input_num_f">
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+			<control name="ok_btn" ref="coupon_calc_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+		<form name="tip_amount_f">
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+			<control name="ok_btn" ref="coupon_calc_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="hide_btn" val="Hide"/>
+			<control name="amount_lb" val="Сумма:"/>
+			<control name="tip_lb" val="Чаевые:"/>
+			<control name="total_lb" val="Итого:"/>
+		</form>
+		<form name="load_f">
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+		<form name="close_order_manager_f">
+			<control name="caption" val="Причина возврата"/>
+			<control name="sg_id" val="ID"/>
+			<control name="sg_created" val="Создан"/>
+			<control name="sg_amount" val="Сумма"/>
+			<control name="sg_payment_type" val="Типа оплаты"/>
+			<control name="sg_room" val="Зал"/>
+			<control name="sg_POS" val="Терминал"/>
+			<control name="sg_Operator" val="Официант"/>
+			<control name="find_order_btn" val="Поиск по номеру заказа"/>
+			<control name="print_receipt_duplicate_btn" val="Печать дубликата"/>
+			<control name="refund_order_btn" val="Возврат заказа"/>
+			<control name="change_payment_type_btn" val="Сменить тип оплаты"/>
+			<control name="reopen_order_btn" val="Открыть закрытый заказ"/>
+			<control name="close_btn" val="Закрыть окно"/>
+		</form>
+		<form name="text_f">
+			<control name="ok_btn" ref="auth_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="amount_lb" val="Сумма"/>
+			<control name="amount_sizer" val="Сумма"/>
+			<control name="close_btn" ref="close_order_manager_f::close_btn"/>
+			<control name="space_btn" val="Пробел"/>
+		</form>
+		<form name="advance_f">
+			<control name="page1" val="Новая трата"/>
+			<control name="page2" ref="cashier_f::cash_advance_btn1"/>
+			<control name="expense_type_sizer" val="Тип траты"/>
+			<control name="amount_lb" val="Сумма:"/>
+			<control name="comment_sizer" val="Описание"/>
+			<control name="ok_btn" ref="auth_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="comment2_sizer" ref="advance_f::comment_sizer"/>
+			<control name="change_lb" val="Сдача:"/>
+			<control name="sg_expense_id" val="ID"/>
+			<control name="sg_opener" val="Открыл"/>
+			<control name="sg_expense_type" ref="advance_f::expense_type_sizer"/>
+			<control name="sg_date" val="Дата"/>
+			<control name="sg_amount" val="Сумма"/>
+			<control name="open_expenses_sizer" ref="advance_f::page2"/>
+		</form>
+		<form name="delayed_order_f">
+			<control name="firstname_lb" val="Имя"/>
+			<control name="lastname_lb" val="Фамилия"/>
+			<control name="street_address_lb" val="Адрес"/>
+			<control name="zip_lb" val="Индекс"/>
+			<control name="city_lb" val="Город"/>
+			<control name="phone_lb" val="Телефон"/>
+			<control name="yellow_lb" val="Обязательные опции отмечены желтым цветом"/>
+			<control name="delivery_pickup_cap" val="Время доставки (пикапа)"/>
+			<control name="set_date_btn" val="Установить дату"/>
+			<control name="set_time_btn" val="Установить время"/>
+			<control name="note_cap" val="Заметки"/>
+			<control name="prepayment_cap" val="Предоплата"/>
+			<control name="prepayment_btn" val="Предоплата"/>
+			<control name="cancel_prepayment_btn" val="Отеменить предоплату"/>
+			<control name="auth_cc_btn" val="Авторизовать КК"/>
+			<control name="cancel_auth_cc_btn" val="Отменить авторизацию КК"/>
+			<control name="print_slip_btn" val="Напечатать слип"/>
+			<control name="cancel_order_btn" val="Отменить заказ"/>
+			
+			<control name="save_btn" val="Сохранить заказ"/>
+			<control name="save_and_print_btn" val="Сохранить и напечатать заказ"/>
+			<control name="save_and_hide_btn" val="Сохранить и скрыть заказ"/>
+			<control name="cancel_btn" val="Закрыть окно"/>
+			<control name="table_str" val="Стол: "/>
+			<control name="not_selected_str" val="не выбран"/>
+		</form>
+		<form name="config_f">
+			<control name="allow_remove_entrees_chb" val="Разрешать удалять приготовленные блюда"/>
+			<control name="fline_lb" val="Строка 1"/>
+			<control name="sline_lb" val="Строка 2"/>
+			<control name="main_tab" val="Основные"/>
+			<control name="cc_tab" val="Настройки КК"/>
+			<control name="printer_tab" val="Принтер"/>
+			<control name="security_tab" val="Безопасность"/>
+			<control name="functionalty_tab" val="Функциональность"/>
+			<control name="other_tab" val="Прочие"/>
+			<control name="close_btn" val="Сохранить и закрыть"/>			
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="lock_timeout_lb" val="Блокировка приложения через:"/>
+			<control name="server_status_check_lb" val="Проверка статуса сервера:"/>
+			<control name="auto_lock_chb" val="Блокировать приложение после каждого действия"/>
+			<control name="vfd_chb" val="Использовать VFD экран"/>
+			<control name="vfd_sizer" val="Настройки VFD экрана"/>
+			<control name="vfd_align_lb" val="Выравнивание"/>
+			<control name="vfd_text_lb" val="Текст"/>
+			<control name="auto_resolution_chb" val="На весь экран"/>
+			<control name="resolution_sizer" val="Разменры окна приложения"/>
+			<control name="terminate_app_btn" val="Закрыть приложение"/>
+			<control name="screen_width_lb" val="Ширина"/>
+			<control name="screen_height_lb" val="Высота"/>
+			<control name="us_mode_chb" val="Обязательно использовать zip в отложенных заказах"/>
+			
+			<control name="cc_processing_chb" val="Включить процессинг КК"/>
+			<control name="cc_account_sizer" val="Настройки аккаунта"/>
+			<control name="License_id_lb" val="License_id"/>
+			<control name="site_id_lb" val="Site_id"/>
+			<control name="device_id_lb" val="Device_id"/>
+			<control name="user_lb" val="Пользователь"/>
+			<control name="password_lb" val="Пароль"/>
+			<control name="test_credentials_btn" val="Тест текущей настройки"/>
+			<control name="max_tip_val_lb" val="Максимальный размер чаевых:"/>
+			<control name="cc_stand_alone_rb" val="Использовать внешнее устройство для процессинга КК"/>
+			<control name="cc_disable_rb" val="Выключить процессинг KK"/>
+			
+			<control name="printer_sizer" val="Чековый принтер"/>
+			<control name="local_printer_chb" val="Локальный принтер"/>
+			<control name="local_printer_sizer" val="Настройки порта"/>
+			<control name="printer_port_lb" val="Порт"/>	
+			<control name="command_set_lb" val="Набор комманд"/>
+			<control name="baud_rate_lb" val="Скорость порта"/>
+			<control name="net_printer_chb" val="Сетевой принтер"/>
+			<control name="host_settings_sizer" val="Настройки сетевого принтера"/>
+			<control name="host_lb" val="Хост"/>
+			<control name="no_printer_chb" val="Нет принтера"/>
+			<control name="printings_settings_sizer" val="Настройки печати"/>
+			<control name="group_by_chb" val="Группировать чек по группам кухонь"/>
+			<control name="print_logo_chb" val="Печатать логотип"/>
+			<control name="test_printer_btn" val="Тест принтера"/>
+			
+			<control name="securty_sizer" val="Операции требующие автроризации менеджера"/>
+			<control name="auth_reciept_duplicate_chb" val="Печать дубликата чека"/>
+			<control name="auth_refund_chb" val="Возврат заказа"/>
+			<control name="auth_app_settings_chb" val="Доступ к настройкам приложения"/>
+			<control name="auth_misc_charges_chb" val="Создание платы за обслуживание"/>
+			<control name="auth_shift_chb" ref="cashier_f::shift_btn"/>
+			
+			<control name="trainig_mode_chb" val="Тестовый режим"/>
+			<control name="frac_lb" val="Количество десятичных знаков при оплате наличными"/>
+			<control name="entree_codes_chb" ref="cashier_f::entree_code_btn"/>
+			<control name="cash_advance_chb" val="cash advance"/>
+			<control name="comment_entree_chb" ref="cashier_f::comment_entree_btn"/>
+			<control name="discount_chb" ref="cashier_f::discount_btn"/>
+			<control name="stay_on_top_chb" val="Поверх остальных окон"/>
+			<control name="misc_charges_chb" ref="cashier_f::misc_charges_btn"/>
+			<control name="tokens_chb" ref="cashier_f::token_btn1"/>
+			<control name="auto_lock_chb" val="Блокировать приложение поле каждого действия"/>
+			<control name="cash_input_chb" val="Показывать окно ввода наличных при оплтате"/>
+			<control name="close_order_operation_auto_close_chb" val="Закрывать окно работы с закрытими заказами после первого действия"/>
+			<control name="for_here_chb" ref="cashier_f::for_here_btn"/>
+			<control name="to_go_chb" ref="cashier_f::to_go_btn"/>
+			<control name="delivery_chb" ref="cashier_f::delivery_btn"/>
+			<control name="pickup_chb" ref="cashier_f::pickup_btn"/>
+			<control name="employee_meal_chb" ref="cashier_f::employee_meal_btn"/>
+			<control name="donation_chb" ref="cashier_f::donation_btn"/>
+			<control name="order_type_sizer" val="Типы заказов"/>
+			<control name="auth_reload_all_menus_chb" ref="global::reload_all_menus_str"/>
+		</form>
+		<form name="calc_f">
+			<control name="caption" val="Оплата наличными"/>
+			<control name="cash_tendered_lb" val="Внесено"/>
+			<control name="order_total_lb" val="Сумма заказа"/>
+			<control name="change_lb" val="Сдача"/>
+			<control name="exact_amount_btn" val="Без сдачи"/>
+			<control name="cancel_btn" ref="global::CANCEL_BTN"/>
+			<control name="process_btn" val="Оплатить"/>
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+		</form>
+		<form name="info_f">
+			<control name="close_btn" ref="close_order_manager_f::close_btn"/>
+		</form>
+
+	</application>	
+	
+	
+	<application name="cashierw">
+		<form name="info_f">
+			<control name="close_btn" ref="close_order_manager_f::close_btn"/>
+		</form>
+		<form name="payment_f">
+			<control name="cash_btn" val="Наличные"/>
+			<control name="credit_card_btn" val="КК"/>
+			<control name="check_btn" val="Чек"/>
+		</form>
+		<form name="action_f">
+			<control name="caption1" val="стол "/>
+			<control name="caption2" val=" выбор действия"/>
+			<control name="new_order_btn" val="Новый заказ"/>
+			<control name="exist_order_btn" val="Открытые заказы"/>
+			<control name="split_order_btn" val="Разбить заказ"/>
+			<control name="move_order_btn" val="Переместить заказ на другой стол"/>
+			<control name="move_person_btn" val="Переместить заказ другом официанту"/>
+		</form>
+		<form name="auth_f">
+			<control name="ok_btn" val="Ok"/>
+			<control name="cancel_btn" val="Отмена"/>
+			<control name="show_kbd_btn1" val="Показать клавиатуру"/>
+			<control name="show_kbd_btn2" val="Убрать клавиатуру"/>
+			<control name="advanced_btn1" val="Подробно &gt;&gt;"/>
+			<control name="advanced_btn2" val="Подробно &lt;&lt;"/>
+			<control name="login_lb" val="имя:"/>
+			<control name="password_lb" val="пароль:"/>
+			<control name="host_lb" val="сервер:"/>
+			<control name="login_message_lb1" val="проведите карточку для входа"/>
+			<control name="login_message_lb2" val="введите имя и пароль для входа"/>
+		
+			<control name="empty_login_msg" val="Не введено имя"/>
+			<control name="empty_password_msg" val="Не введен пароль"/>
+			<control name="empty_host_msg" val="Не введен сервер"/>
+		</form>
+		<form name="cashier_f">
+			<control name="close_order_btn" val="Закрыть заказ. Печать чека"/>
+			<control name="other_orders_operations_btn" val="Дополнительно"/>
+			<control name="print_receipt_duplicate_btn" val="Печать предчека"/>
+			<control name="cancel_changes_btn" val="Отменить (не сохранять)"/>
+			<control name="save_changes_btn" val="Заказать (Сохранить)"/>
+			<control name="discount_btn" val="Скидки"/>
+			<control name="guest_btn" val="Гостей: "/>
+			<control name="save_and_hide_btn" val="Сохранить из скрыть заказ"/>
+			<control name="logout_btn" val="Заблокировать"/>
+			<control name="browse_delayed_orders_btn" val="Просмотр отложенных заказов"/>
+			<control name="open_orders_btn_mng" val="Просмотр всех отрытых заказов"/>
+			<control name="open_orders_btn" val="Просмотр моих отркытых заказов"/>
+			<control name="open_cash_drawer_btn" val="Открыть денежный ящик"/>
+			<control name="sg_entree" val="Блюдо"/>
+			<control name="sg_price" val="Цена"/>
+			<control name="sg_qty" val="Кол."/>
+			<control name="sg_amount" val="Стоимость"/>
+			<control name="m_subtotal_lb" val="Subtotal:"/>
+			<control name="m_sales_tax_lb" val="Sales tax:"/>
+			<control name="m_total_lb" val="Итого:"/>
+			<control name="comment_entree_btn" val="Коментарий к блюду"/>
+			<control name="for_here_btn" val="Здесь"/>
+			<control name="create_table_booking_order_btn" val="Бронирование стола"/>
+			<control name="table_booking_btn" ref="cashier_f::create_table_booking_order_btn"/>
+			<control name="to_go_btn" val="На вынос"/>
+			<control name="delivery_btn" val="Доставка"/>
+			<control name="pickup_btn" val="Пикап"/>
+			<control name="employee_meal_btn" val="Питание сотрудников"/>
+			<control name="donation_btn" val="Пожертвования"/>
+			<control name="misc_charges_btn" val="Доп. оплаты"/>
+			<control name="entree_code_btn" val="Поиск блюда по коду"/>
+			<control name="token_btn1" val="Токен"/>
+			<control name="token_btn2" val="не выбран"/>
+			<control name="delayed_order_details_btn" val="Детали отложенных заказов"/>
+			<control name="refund_order_btn" val="Работа с закрытыми заказами"/>
+			<control name="cash_advance_btn1" val="Расходование наличных"/>
+			<control name="cash_advance_btn2" val=""/>
+			<control name="process_btn" val="Закрыть заказ"/>
+			<control name="menu_select_btn" val="Выбор меню"/>
+			
+			<control name="tools_lb_devliery_fee_str" val="Плата за доставку"/>
+			<control name="tools_lb_employee_str" val="Сотрудник: "/>
+			<control name="select_coupon_discout_str" val="Выбирите скидку"/>
+			<control name="coupon_msg1" val="Зеленым отмечены доступные скидки к заказу. Красным не доступные. Желтым системные скидки."/>
+			<control name="add_misc_chage_str" val="Добавление платы за обслуживание."/>
+			<control name="charge_shot_description_str" val="Описание"/>
+			<control name="comment_entree_str" val="Коментарий к блюду"/>
+			<control name="close_order_management_str" ref="cashier_f::refund_order_btn"/>
+			
+			<control name="terminal_not_register_msg" val="Этот терминал не внесен в смену или смена не запущена."/>
+			<control name="select_payment_type_str" val="Выберите тип оплаты"/>
+		</form>
+		<form name="order_list_f">
+			<control name="caption1" val="Заказы на столе "/>
+			<control name="caption2" val=""/>
+			<control name="caption3" val="Список заказов"/>
+		</form>
+		
+		<form name="global">
+			<control nam="prep_order_str" val="Вы уверены, что блюдо успеют приготовить и/или доставить?"/>
+			<control name="is_table_booking_started_being_used_str" val="Перенести заказ на стол (гости пришли)?"/>
+			<control name="required_delayed_order_properties_str" val="Заполните обязательные поля отложенного заказа"/>
+			<control name="reload_all_menus_str" val="Перечитать все меню"/>
+			<control name="select_a_menu_str" val="Выберите меню"/>
+			<control name="select_a_table_str" val="Выбирите стол"/>
+			<control name="msg1_str" val="Не заполнены обязательные детали отложенного заказа"/>
+			<control name="msg2_prefix" val="Сумма заказа меньше ("/>
+			<control name="msg2_postfix" val="). Продолжить?"/>
+			<control name="msg3_prefix" val="Лимит бесплатного питания превышен на "/>
+			<control name="msg3_postfix" val=". Продолжить?"/>
+			<control name="msg4_str" val="Минимальная сумма заказа &quot;Доставка&quot;: "/>
+			<control name="order_subtotal_precent_str" val="Процент с суммы"/>
+			<control name="specified_amount_str" val="Конкретную сумму"/>		
+			<control name="charge_cancel_fee_str" val="Удержать часть предоплаты"/>
+			<control name="do_not_charge_anything_str" val="Не удерживать часть предоплаты"/>
+			<control name="delayed_order_cancel_str" val="Отмена отложеного заказа"/>
+			<control name="type_cash" val="Наличные"/>
+			<control name="type_cc" val="КК"/>
+			
+			<control name="this_will_cancel_the_prepayment_continue_str" val="Предоплата будет отменена. Продолжить?"/>
+			<control name="maximum_prepayment_amount_is_str" val="Максимально возможная предоплата "/>
+			<control name="Su" val="Вс"/>
+			<control name="Mo" val="Пн"/>
+			<control name="Tu" val="Вт"/>
+			<control name="We" val="Ср"/>
+			<control name="Th" val="Чт"/>
+			<control name="Fr" val="Пт"/>
+			<control name="Sa" val="Сб"/>
+			
+			<control name="minutes_str" val="Минуты"/>
+			<control name="hours_str" val="Часы"/>
+			
+			<control name="yes_str" val="Да"/>
+			<control name="no_str" val="Нет"/>
+			<control name="OK_BTN" val="Ok"/>
+			<control name="CANCEL_BTN" val="Отмена"/>
+			<control name="PROCESS_BTN" val="Оплтатить"/>
+			<control name="pick_the_delivery_date_str" val="Выберите дату доставки"/>
+			<control name="pick_the_delivery_time_str" val="Выберите время доставки"/>
+			<control name="pick_the_pickup_date_str" val="Выберите дату пикапа"/>
+			<control name="pick_the_pickup_time_str" val="Выберите время пикапа"/>
+			<control name="pick_the_table_booking_date_str" val="Выберите дату бронирования"/>
+			<control name="pick_the_table_booking_time_str" val="Выберите время бронирования"/>
+			<control name="employee_form_footer_str" val="Для замены сотрудника нажмите ещё раз это кнопку"/>
+			<control name="employee_selection_for_employee_mail_str" val="Выбирите сотрудника"/>
+			<control name="waste_entree_str" val="списать блюдо продукты, ингредиетны"/>
+			<control name="select_the_room_str" val="&lt;Выбрать зал&gt;"/>
+			<control name="open_orders_str" val="открытых заказов: "/>
+			<control name="occupied_str" val="занят"/>
+			<control name="free_str" val="свободен"/>
+			<control name="cancel_str" ref="auth_f::cancel_btn"/>
+			<control name="swipe_employee_card_str" val="провести карточку сотрудника"/>
+			<control name="select_employee_from_list_str" val="Выбрать сотрудника из списка"/>
+			<control name="unregistered_user_str" val="&lt;Не зарегистрированный сотрудник&gt;"/>
+			<control name="type_the_employee_name_str" val="Введите имя сотрудника"/>
+			<control name="entry_in_stop_list_since_str" val="Блюдо в стоп листе с "/>
+			<control name="s_till_s_str" val=" по "/>
+			<control name="AUTHORIZE_CC_str" val="Авторизовать кредитную карту"/>
+			<control name="Manual_entry_str" val="Ввести вручную"/>
+			<control name="credit_card_payment_str" val="Оплата кредитной картой"/>
+			<control name="communication_with_processing_server_please_wait" val="Идет обработка запроса процессинговым центром, подождите."/>
+			<control name="credit_card_auth_has_been_void" val="Авторизация была отменена"/>
+			<control name="Order_str" val="Заказ"/>
+			<control name="has_been_successfully_created_str" val=" был успешно создан."/>
+			<control name="order_total_is_str" val="Сумма заказа "/>
+			<control name="change_is_str" val="Сдача "/>
+			<control name="order_created_str" val=" Заказ успешно создан"/>
+			<control name="Settings_str" val="Настройки"/>
+			<control name="select_a_token_str" val="Выбор токена"/>
+			<control name="type_entree_code_str" val="Введите код блюда"/>
+			<control name="entree_not_found_str" val="Блюдо не найдено"/>
+			<control name="select_modifiers_str" val="Выбирите модификаторы"/>
+			<control name="Cash_advance_str" val="Траты наличными"/>
+			<control name="delayed_order_list_str" val ="Список отложенных заказов"/>
+			<control name="order_load_str" val="Загрузка заказа"/>
+			<control name="please_wait_str" val="Ожидайте"/>
+			<control name="delayed_order_details_str1" val="Детали отложенного заказа"/>
+			<control name="delayed_order_details_str2" val=""/>
+			<control name="manager_auth_required_str" val="Требуется авторизация менеджера"/>
+			<control name="swipe_your_magnetic_card_to_sign_in_str" ref="auth_f::login_message_lb1"/>
+			<control name="tpye_your_login_and_password_str" ref="auth_f::login_message_lb2"/> 
+			<control name="unlock_application_str" val="Приложение заблокировано"/>
+			<control name="menu_root_str" val="&lt;корень меню&gt;"/>
+			<control name="next_str" val="след. &gt;&gt;"/>
+			<control name="prev_str" val="пред. &lt;&lt;"/>
+			<control name="order_not_found_str" val="Заказ не найден"/>
+			<control name="adjustable_discount_str" val="Скидка менеджера к заказу"/>
+			<control name="specify_number_of_discount_coupons_str" val="Введите количество купонов"/>
+			<control name="discount_in_percent_str" val="Скидка в процентах"/>
+			<control name="discount_in_doll_str" val="скидка в рублях"/>
+			<control name="cancel_auth_msg" val="Прекратить авторизацию?"/>
+		</form>
+
+		<form name="add_modifiers_f">
+			<control name="ok_btn" val="Ok"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="sg_group_modifier" val="Группа/Модификатор"/>
+			<control name="sg_qty" ref="cashier_f::sg_qty"/>
+			<control name="select_modifiers_for_the_str1" val="Выберите модификаторы для блюда &quot;"/>
+			<control name="select_modifiers_for_the_str2" val="&quot;"/>
+		</form>
+
+		<form name="coupon_calc_f">
+			<control name="clear_btn" val="Очистить"/>
+			<control name="ok_btn" ref="auth_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+
+		<form name="manual_entry_f">
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+			<control name="ok_btn" ref="coupon_calc_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+		<form name="input_num_f">
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+			<control name="ok_btn" ref="coupon_calc_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+		<form name="tip_amount_f">
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+			<control name="ok_btn" ref="coupon_calc_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="hide_btn" val="Hide"/>
+			<control name="amount_lb" val="Сумма:"/>
+			<control name="tip_lb" val="Чаевые:"/>
+			<control name="total_lb" val="Итого:"/>
+		</form>
+		<form name="load_f">
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+		</form>
+		<form name="close_order_manager_f">
+			<control name="caption" val="Причина возврата"/>
+			<control name="sg_id" val="ID"/>
+			<control name="sg_created" val="Создан"/>
+			<control name="sg_amount" val="Сумма"/>
+			<control name="sg_payment_type" val="Типа оплаты"/>
+			<control name="sg_room" val="Зал"/>
+			<control name="sg_POS" val="Терминал"/>
+			<control name="sg_Operator" val="Официант"/>
+			<control name="find_order_btn" val="Поиск по номеру заказа"/>
+			<control name="print_receipt_duplicate_btn" val="Печать дубликата"/>
+			<control name="refund_order_btn" val="Возврат заказа"/>
+			<control name="change_payment_type_btn" val="Сменить тип оплаты"/>
+			<control name="reopen_order_btn" val="Открыть закрытый заказ"/>
+			<control name="close_btn" val="Закрыть окно"/>
+		</form>
+		<form name="text_f">
+			<control name="ok_btn" ref="auth_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="amount_lb" val="Сумма"/>
+			<control name="amount_sizer" val="Сумма"/>
+			<control name="close_btn" ref="close_order_manager_f::close_btn"/>
+			<control name="space_btn" val="Пробел"/>
+		</form>
+		<form name="advance_f">
+			<control name="page1" val="Новая трата"/>
+			<control name="page2" ref="cashier_f::cash_advance_btn1"/>
+			<control name="expense_type_sizer" val="Тип траты"/>
+			<control name="amount_lb" val="Сумма:"/>
+			<control name="comment_sizer" val="Описание"/>
+			<control name="ok_btn" ref="auth_f::ok_btn"/>
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="comment2_sizer" ref="advance_f::comment_sizer"/>
+			<control name="change_lb" val="Сдача:"/>
+			<control name="sg_expense_id" val="ID"/>
+			<control name="sg_opener" val="Открыл"/>
+			<control name="sg_expense_type" ref="advance_f::expense_type_sizer"/>
+			<control name="sg_date" val="Дата"/>
+			<control name="sg_amount" val="Сумма"/>
+			<control name="open_expenses_sizer" ref="advance_f::page2"/>
+			<control name="" val=""/>
+			<control name="" val=""/>
+		</form>
+		<form name="delayed_order_f">
+			<control name="please_make_the_order_first_str" val="Наполните в начале заказ"/>
+			<control name="firstname_lb" val="Имя"/>
+			<control name="lastname_lb" val="Фамилия"/>
+			<control name="street_address_lb" val="Адрес"/>
+			<control name="zip_lb" val="Индекс"/>
+			<control name="city_lb" val="Город"/>
+			<control name="phone_lb" val="Телефон"/>
+			<control name="yellow_lb" val="Обязательные опции отмечены желтым цветом"/>
+			<control name="delivery_pickup_cap" val="Дата и время"/>
+			<control name="set_date_btn" val="Установить дату"/>
+			<control name="set_time_btn" val="Установить время"/>
+			<control name="note_cap" val="Заметки"/>
+			<control name="prepayment_cap" val="Предоплата"/>
+			<control name="prepayment_btn" val="Предоплата"/>
+			<control name="cancel_prepayment_btn" val="Отеменить предоплату"/>
+			<control name="auth_cc_btn" val="Авторизовать КК"/>
+			<control name="cancel_auth_cc_btn" val="Отменить авторизацию КК"/>
+			<control name="print_slip_btn" val="Напечатать слип"/>
+			<control name="cancel_order_btn" val="Отменить заказ"/>
+			
+			<control name="save_btn" val="Сохранить заказ"/>
+			<control name="save_and_print_btn" val="Сохранить и напечатать заказ"/>
+			<control name="save_and_hide_btn" val="Сохранить и скрыть заказ"/>
+			<control name="cancel_btn" val="Закрыть окно"/>
+			<control name="table_str" val="Стол: "/>
+			<control name="not_selected_str" val="не выбран"/>
+		</form>
+		<form name="config_f">
+			<control name="allow_remove_entrees_chb" val="Разрешать удалять приготовленные блюда"/>
+			<control name="discount_chb" ref="cashier_f::discount_btn"/>
+			<control name="comment_entree_chb" ref="cashier_f::comment_entree_btn"/>
+			<control name="cash_advance_chb" val="cash advance"/>
+			<control name="close_order_operation_auto_close_chb" val="Закрывать окно работы с закрытими заказами после первого действия"/>
+			<control name="cash_input_chb" val="Показывать окно ввода наличных при оплтате"/>
+			<control name="tokens_chb" ref="cashier_f::token_btn1"/>
+			<control name="entree_codes_chb" ref="cashier_f::entree_code_btn"/>
+			<control name="main_tab" val="Основные"/>
+			<control name="cc_tab" val="Настройки CC"/>
+			<control name="printer_tab" val="Принтер"/>
+			<control name="security_tab" val="Безопасность"/>
+			<control name="functionalty_tab" val="Функциональность"/>
+			<control name="other_tab" val="Прочие"/>
+			<control name="close_btn" val="Сохранить и закрыть"/>			
+			<control name="cancel_btn" ref="auth_f::cancel_btn"/>
+			<control name="lock_timeout_lb" val="Блокировка приложения через:"/>
+			<control name="server_status_check_lb" val="Проверка статуса сервера:"/>
+			<control name="auto_lock_chb" val="Блокировать приложение после каждого действия"/>
+			<control name="vfd_chb" val="Использовать VFD экран"/>
+			<control name="vfd_sizer" val="Настройки VFD экрана"/>
+			<control name="vfd_align_lb" val="Выравнивание"/>
+			<control name="vfd_text_lb" val="Текст"/>
+			<control name="auto_resolution_chb" val="На весь экран"/>
+			<control name="resolution_sizer" val="Разменры окна приложения"/>
+			<control name="terminate_app_btn" val="Закрыть приложение"/>
+			<control name="screen_width_lb" val="Ширина"/>
+			<control name="screen_height_lb" val="Высота"/>
+			<control name="us_mode_chb" val="Обязательно использовать zip в отложенных заказах"/>
+			
+			<control name="cc_processing_chb" val="Включить процессинг КК"/>
+			<control name="cc_account_sizer" val="Настройки аккаунта"/>
+			<control name="License_id_lb" val="License_id"/>
+			<control name="site_id_lb" val="Site_id"/>
+			<control name="device_id_lb" val="Device_id"/>
+			<control name="user_lb" val="Пользователь"/>
+			<control name="password_lb" val="Пароль"/>
+			<control name="test_credentials_btn" val="Тест текущей настройки"/>
+			<control name="max_tip_val_lb" val="Максимальный размер чаевых:"/>
+			<control name="cc_stand_alone_rb" val="Использовать внешнее устройство для процессинга КК"/>
+			<control name="cc_disable_rb" val="Выключить процессинг KK"/>
+			
+			<control name="printer_sizer" val="Чековый принтер"/>
+			<control name="local_printer_chb" val="Локальный принтер"/>
+			<control name="local_printer_sizer" val="Настройки порта"/>
+			<control name="printer_port_lb" val="Порт"/>	
+			<control name="command_set_lb" val="Набор комманд"/>
+			<control name="baud_rate_lb" val="Скорость порта"/>
+			<control name="net_printer_chb" val="Сетевой принтер"/>
+			<control name="host_settings_sizer" val="Настройки сетевого принтера"/>
+			<control name="host_lb" val="Хост"/>
+			<control name="no_printer_chb" val="Нет принтера"/>
+			<control name="printings_settings_sizer" val="Настройки печати"/>
+			<control name="group_by_chb" val="Группировать чек по группам кухонь"/>
+			<control name="print_logo_chb" val="Печатать логотип"/>
+			<control name="test_printer_btn" val="Тест принтера"/>
+			
+			<control name="securty_sizer" val="Операции требующие автроризации менеджера"/>
+			<control name="auth_reciept_duplicate_chb" val="Печать дубликата чека"/>
+			<control name="auth_refund_chb" val="Возврат заказа"/>
+			<control name="auth_app_settings_chb" val="Доступ к настройкам приложения"/>
+			<control name="auth_misc_charges_chb" val="Создание платы за обслуживание"/>
+			<control name="stay_on_top_chb" val="Поверх остальных окон"/>
+			<control name="need_restart_str" val="Изменения вступять в силу после перезагрузки"/>
+			<control name="auth_reload_all_menus_chb" ref="global::reload_all_menus_str"/>
+			<control name="auth_table_booking_chb" val="Создание заказов бронирования"/>
+			<control name="misc_charges_chb" ref="cashier_f::misc_charges_btn"/>
+			
+			<control name="for_here_chb" ref="cashier_f::for_here_btn"/>
+			<control name="to_go_chb" ref="cashier_f::to_go_btn"/>
+			<control name="delivery_chb" ref="cashier_f::delivery_btn"/>
+			<control name="pickup_chb" ref="cashier_f::pickup_btn"/>
+			<control name="employee_meal_chb" ref="cashier_f::employee_meal_btn"/>
+			<control name="donation_chb" ref="cashier_f::donation_btn"/>
+			<control name="order_type_sizer" val="Типы заказов"/>
+			<control name="table_booking_chb" val="Бронирование стола"/>
+			
+			<control name="trainig_mode_chb" val="Тестовый режим"/>
+		</form>
+		<form name="calc_f">
+			<control name="caption" val="Оплата наличными"/>
+			<control name="cash_tendered_lb" val="Внесено"/>
+			<control name="order_total_lb" val="Сумма заказа"/>
+			<control name="change_lb" val="Сдача"/>
+			<control name="exact_amount_btn" val="Без сдачи"/>
+			<control name="cancel_btn" ref="global::CANCEL_BTN"/>
+			<control name="process_btn" val="Оплатить"/>
+			<control name="clear_btn" ref="coupon_calc_f::clear_btn"/>
+		</form>
+	</application>
+	
+	
+	<application name="Storekeeper">
+		<form name="stk_f">
+			<control name="purchase_btn" val="Закупить"/>
+			<control name="delete_btn" val="Удалить"/>
+			<control name="edit_btn" val="Изменить"/>
+			<control name="refresh_btn" val="Обновить"/>
+			<control name="waste_btn" val="Списать"/>
+			<control name="send_btn" val="Отправить"/>
+			<control name="receive_btn" val="Получить"/>
+			<control name="stock_btn" val="Инвентаризация"/>
+			<control name="show_btn" val="Просмотр"/>
+			<control name="cook_btn" val="Пригот. п/ф"/>
+			<control name="sortid_btn" val="Сортировать по номеру накладной"/>
+			<control name="sortdate_btn" val="Сортировать по дате создания накладной"/>
+			
+			<control name="caption" val="Storekeeper"/>
+			
+			<control name="det_name_col" val="Продукт"/>
+			<control name="det_type_col" val="Тип"/>
+			<control name="det_measure_col" val="Ед.изм."/>
+			<control name="det_amount_col" val="Количество"/>
+			<control name="det_price_col" val="Цена"/>
+			<control name="det_qty_col" val="Стоимость"/>
+			<control name="is_delinvoice_question" val="Вы действительно хотите удалить накладную?"/>
+			<control name="change_invoice_error" val="Невозможно изменить накладную этого типа"/>
+			<control name="select_invoice_error" val="Выберите накладную"/>
+			<control name="is_del_question" val="Вы уверены?"/>
+
+			<control name="qwerty_btn" val="?5"/> 
+			
+			<control name="cur_item_col" val="Продукт"/>
+			<control name="cur_qty_col" val="Тип"/>
+			<control name="cur_meas_col" val="Ед.изм."/>
+			
+			<control name="inv_user_col" val="Кем создана"/>
+			<control name="inv_time_col" val="Когда создана"/>
+			<control name="inv_name_col" val="Накладная"/>
+			<control name="inv_type_col" val="Тип"/>
+			<control name="inv_memo_col" val="Комментарий"/>
+			<control name="inv_supplier_col" val="Поставщик"/>
+			
+			<control name="p_current_stock" val="Текущее состояние склада"/>
+			<control name="p_invoice" val="Накладные"/>	
+							
+		</form> 
+		<form name="invoice_f">
+			<control name="select_item_error" val="Выберите изменяемую позицию"/>
+			<control name="select_invoice_error" val="Выберите изменяемую накладную"/>
+			<control name="select_supplier_error" val="Выберите поставщика"/>
+			<control name="select_warehouse_error" val="Выберите склад"/>
+			<control name="lb_supplier" val="Поставщики"/>
+			<control name="lb_warehouse" val="Склады"/>
+			<control name="lb_date" val="Дата создания"/>
+			<control name="not_supplier" val = "Поставщик не задан"/>
+			<control name="caption" val="Накладная"/>
+			<control name="btn_add" val="Добавить"/>
+			<control name="btn_edit" val="Редактировать"/>
+			<control name="btn_delete" val="Удалить"/>
+			<control name="btn_group" val="Отображать группы"/>
+			
+			<control name="null_login" val="Логин должен быть задан"/>
+			<control name="null_pwd" val="Пароль должен быть задан"/>
+			<control name="err_pwd" val="Некорректный пароль"/>
+			<control name="null_pos" val="Должность должна быть задана"/>
+			<control name="null_hire" val="Дата приема на работу должна быть задана"/>
+			
+			
+			<control name="item_name_col" val="Наименование"/>
+			<control name="item_meas_col" val="Ед.изм"/>
+			<control name="item_qty_col" val="Количество"/>
+			<control name="item_price_col" val="Цена"/>
+			<control name="item_amount_col" val="Общая сумма"/>
+			
+			<control name="item_inv_col" val="Накладная"/>
+			<control name="item_date_col" val="Дата создания"/>
+			<control name="item_memo_col" val="Комментарий"/>
+			<control name="item_user_col" val="Кто создал"/>
+			
+			<control name="item_det_name_col" val="Наименование"/>
+			<control name="item_det_type_col" val="Тип"/>
+			<control name="item_det_qty_col" val="Количество"/>
+			<control name="item_det_meas_col" val="Цена"/>
+			<control name="item_det_amount_col" val="Общая сумма"/>
+			
+			<control name="ok_btn" val="Сохранить"/>
+			<control name="cancel_btn" val="Отмена"/>
+			
+		</form>
+		<form name="item_f">
+			<control name="caption" val="Продукты &amp; полуфабрикаты"/>
+			<control name="prod_caption" val="Продукты"/>
+			<control name="ingr_caption" val="Полуфабрикаты"/>
+			<control name="select_item_error" val="Выберите продукт или поуфабрикат двойным кликом"/>
+			<control name="uncorrect_item" val="Не задан продукт или полуфабрикат"/>
+			<control name="uncorrect_amount" val="Некорректное количество"/>
+			<control name="uncorrect_price" val="Некорректная цена"/>
+			<control name="ok_btn" val="Ок"/>
+			<control name="cancel_btn" val="Отмена"/>
+			
+			<control name="lb_select_item" val="Выберите продукт или полуфабрикат"/>
+			<control name="lb_amount" val="Количество"/>
+			<control name="lb_measure" val="Ед.изм"/>
+			<control name="lb_price" val="Цена"/>
+		</form> 
+		<form name="errors">
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Настройки"/>
+			<control name="lang_ck" val="Загрузить языковой файл"/>
+			<control name="loc_file" val="Файл"/>
+			<control name="locale_name" val="Локаль"/>
+			<control name="empty_login" val="Пустой login недопустим"/>
+			<control name="empty_pwd" val="Пустой пароль недопустим"/>
+			<control name="empty_host" val="Пустой хост недопустим"/>
+			<control name="com_init" val="Невозможно проинициализировать COM-порт"/>
+			<control name="write_card_try_adain" val="Произошла ошибка записи карты.Нажмите Ок и повторите попытку."/>
+			<control name="write_card_error" val="Произошла ошибка записи карты.Нажмите Ок и повторите попытку."/>
+			<control name="MSR_not_found" val="MSR206 Не найден"/>
+			<control name="cannt_read_com" val="Невозможно прочитать данные из COM-порта"/>
+			<control name="cannt_open_com" val="Невозможно открыть COM-порт"/>
+			<control name="swipe_card" val="Прокатайте карточку в MSR206 и нажмите Ок"/>
+			<control name="usr_not_found" val="Пользователь не найден"/>	
+			<control name="com_notvalid" val="COM-порт недоступен для записи карточки"/>	
+		</form> 
+			
+		<form name="auth_f">
+			<control name="ok_btn" val="Ok"/>
+			<control name="cancel_btn" val="Отмена"/>
+			<control name="show_kbd_btn1" val="Показать клавиатуру"/>
+			<control name="show_kbd_btn2" val="Убрать клавиатуру"/>
+			<control name="advanced_btn1" val="Подробно &gt;&gt;"/>
+			<control name="advanced_btn2" val="Подробно &lt;&lt;"/>
+			<control name="login_lb" val="имя:"/>
+			<control name="password_lb" val="пароль:"/>
+			<control name="host_lb" val="сервер:"/>
+			<control name="login_message_lb1" val="проведите карточку для входа"/>
+			<control name="login_message_lb2" val="введите имя и пароль для входа"/>
+		
+			<control name="empty_login_msg" val="Не введено имя"/>
+			<control name="empty_password_msg" val="Не введен пароль"/>
+			<control name="empty_host_msg" val="Не введен сервер"/>
+		</form>
+	</application>
+
+	<application name="hr_manager">
+		<form name="HR_f">
+			<control name="btn_add" val="Нанять"/>
+			<control name="btn_del" val="Удалить"/>
+			<control name="btn_fire" val="Уволить"/>
+			<control name="btn_rehire" val="Нанять заново"/>
+			<control name="btn_unlock" val="Разблокировать"/>
+			<control name="btn_edit" val="Редактировать"/>
+			<control name="cc" val="?5"/> 
+			
+			<control name="active" val="Активные"/>
+			<control name="fired" val="Уволенные"/>
+			<control name="login" val="Логин"/>
+			<control name="firstname" val="Имя"/>
+			<control name="lastname" val="Фамилия"/>
+			<control name="surname" val="Отчество"/>
+			<control name="birthdate" val="Дата рождения"/>
+			<control name="person" val="Пользователи"/>
+			<control name="position" val="Должности и роли"/>
+			<control name="property" val="Параметры"/>
+			<control name="about" val="О программе"/>
+			<control name="cafe_f" val="Фильтр по кафе"/>
+			<control name="role_f" val="Фильтр по ролям"/>
+			<control name="add_pos" val="Добавить"/>
+			<control name="edit_pos" val="Редактировать"/>
+			<control name="del_pos" val="Удалить"/>
+			<control name="apply" val="Применить"/>
+			<control name="btn_add1" val="Нанять"/>
+			<control name="btn_add2" val="Нанять"/>
+			<control name="btn_add3" val="Нанять"/>
+			<control name="btn_add4" val="Нанять"/>
+			<control name="btn_add5" val="Нанять"/>
+			<control name="birthday" val="День рождения"/>
+			<control name="caption" val="HRManager"/>
+			
+			<control name="bmp_load" val="Загрузить изображение"/>
+			<control name="bmp_clear" val="Удалить изображение"/>
+			
+			<control name="select_usr" val="Выберите пользователя"/>
+			<control name="dont_admin" val="У вас недостаточно привилегий"/>
+			<control name="error_del_pers" val="Существую пользователи с этой должностью"/>
+			<control name="is_del_question" val="Вы уверены?"/>
+			
+			<control name="cafe_filter" val="Фильтр по кафе"/>
+			<control name="role_filter" val="Фильтр по ролям"/>
+							
+		</form> 
+		<form name="person_f">
+			<control name="login" val="Логин"/>
+			<control name="firstname" val="Имя"/>
+			<control name="lastname" val="Фамилия"/>
+			<control name="surname" val = "Отчество"/>
+			<control name="birthday" val="День рождения"/>
+			<control name="state" val="Штат"/>
+			<control name="position" val="Должность"/>
+			<control name="password" val="Пароль"/>
+			<control name="zip" val="Индекс"/>
+			<control name="ssn" val="ИНН"/>
+			<control name="address1" val="Адрес 1"/>
+			<control name="address2" val="Адрес 2"/>
+			<control name="ok" val = "Ок"/>
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Детали сотрудника"/>
+			<control name="photo" val="Фото"/>
+			<control name="ename" val="Адрес для ЧС"/>
+			<control name="ephone" val="Телефон для ЧС"/>
+			<control name="phone_home" val="Домашний телефон"/>
+			<control name="phone_business" val="Рабочий телефон"/>
+			<control name="phone_cell" val="Рабочий телефон"/>
+			<control name="null_pos" val="Должность должна быть назначена"/>
+			<control name="null_hire" val="Дата принятия на работу должна быть заполнена"/>
+			<control name="null_login" val="Неверный логин"/>
+			<control name="null_pwd" val="Неверный пароль"/>
+			<control name="descr" val="Дополнительное описание"/>
+			<control name="c_password" val="Пароль еще раз"/>
+			<control name="write_m_card" val="Записать пароль на магнитную карту"/>
+			<control name="pers_cafe" val="Работа в заведении"/>
+			<control name="pers_role" val="Роли"/>
+			<control name="hire" val="Работает с"/>
+			<control name="city" val="Город"/>
+			<control name="mail_business" val="Рабочий e-mail"/>
+			<control name="mail_private" val="Личный e-mail"/>
+			<control name="write_mcard" val="Записать на магнитную карту"/>
+			
+			<control name="null_login" val="Логин должен быть задан"/>
+			<control name="null_pwd" val="Пароль должен быть задан"/>
+			<control name="err_pwd" val="Некорректный пароль"/>
+			<control name="null_pos" val="Должность должна быть задана"/>
+			<control name="null_hire" val="Дата приема на работу должна быть задана"/>
+			
+		</form>
+		<form name="filter_f">
+			<control name="caption_cafe" val="Фильтр по кафе"/>
+			<control name="caption_role" val="Фильтр по ролям"/>
+			<control name="ok" val="Ок"/>
+			<control name="cancel" val="Отмена"/>
+		</form> 
+		<form name="addpos_f">
+			<control name="pos_name" val="Название должности"/>
+			<control name="caption" val="Новая должность"/>
+			<control name="ok" val="Ок"/>
+			<control name="cancel" val="Отмена"/>
+			<control name="pos_error" val="Введите название должности"/>
+		</form> 
+		<form name="prop_f">
+			<control name="ok" val="Ок"/>
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Настройки"/>
+			<control name="lang_ck" val="Загрузить языковой файл"/>
+			<control name="loc_file" val="Файл"/>
+			<control name="locale_name" val="Локаль"/>
+			<control name="good_MSR_test" val="MSR206 Найден"/>
+			<control name="com_port" val="COM порт"/>
+			
+		</form> 
+		<form name="errors">
+			<control name="cancel" val="Отмена"/>
+			<control name="caption" val="Настройки"/>
+			<control name="lang_ck" val="Загрузить языковой файл"/>
+			<control name="loc_file" val="Файл"/>
+			<control name="locale_name" val="Локаль"/>
+			<control name="empty_login" val="Пустой login недопустим"/>
+			<control name="empty_pwd" val="Пустой пароль недопустим"/>
+			<control name="empty_host" val="Пустой хост недопустим"/>
+			<control name="com_init" val="Невозможно проинициализировать COM-порт"/>
+			<control name="write_card_try_adain" val="Произошла ошибка записи карты.Нажмите Ок и повторите попытку."/>
+			<control name="write_card_error" val="Произошла ошибка записи карты.Нажмите Ок и повторите попытку."/>
+			<control name="MSR_not_found" val="MSR206 Не найден"/>
+			<control name="cannt_read_com" val="Невозможно прочитать данные из COM-порта"/>
+			<control name="cannt_open_com" val="Невозможно открыть COM-порт"/>
+			<control name="swipe_card" val="Прокатайте карточку в MSR206 и нажмите Ок"/>
+			<control name="usr_not_found" val="Пользователь не найден"/>	
+			<control name="com_notvalid" val="COM-порт недоступен для записи карточки"/>	
+		</form> 
+			
+		<form name="auth_f">
+			<control name="ok_btn" val="Ok"/>
+			<control name="cancel_btn" val="Отмена"/>
+			<control name="show_kbd_btn1" val="Показать клавиатуру"/>
+			<control name="show_kbd_btn2" val="Убрать клавиатуру"/>
+			<control name="advanced_btn1" val="Подробно &gt;&gt;"/>
+			<control name="advanced_btn2" val="Подробно &lt;&lt;"/>
+			<control name="login_lb" val="имя:"/>
+			<control name="password_lb" val="пароль:"/>
+			<control name="host_lb" val="сервер:"/>
+			<control name="login_message_lb1" val="проведите карточку для входа"/>
+			<control name="login_message_lb2" val="введите имя и пароль для входа"/>
+		
+			<control name="empty_login_msg" val="Не введено имя"/>
+			<control name="empty_password_msg" val="Не введен пароль"/>
+			<control name="empty_host_msg" val="Не введен сервер"/>
+		</form>
+		<form name="position_f">
+			<control name="pos_name" val="Название должности" />
+			<control name="roles_lb" val="Роли" />
+			<control name="caption" val="Редактирование должности" />
+			<control name="pos_error" val="Введите название должности" />
+		</form>
+		<form name="addpos_f">
+			<control name="pos_name" val="Название должности" />
+			<control name="roles_lb" val="Роли" />
+			<control name="caption" val="Редактирование должности" />
+			<control name="pos_error" val="Введите название должности" />
+		</form>
+	</application>
+	
+</locale>

@@ -1,0 +1,45 @@
+SET (C_FILES ${CMAKE_CURRENT_SOURCE_DIR}/com.cpp)
+SET (H_FILES ${CMAKE_CURRENT_SOURCE_DIR}/com.hpp $ENV{CAFE_SRC}/shared/ksi_include/ksi_exceptions.hpp)
+SET (OTHER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt)
+
+IF (SOURCE_FILES)
+	foreach(file ${C_FILES} ${H_FILES} ${OTHER_FILES})
+		MESSAGE (STATUS "!@# ${file}")
+	endforeach(file)
+	SET (SOURCE_FILES 0)
+	RETURN()
+ENDIF (SOURCE_FILES)
+
+
+PROJECT (SerialLibrary)
+CMAKE_MINIMUM_REQUIRED (VERSION 2.6)
+
+SET (C_FILES com.cpp)
+SET (H_FILES com.hpp $ENV{CAFE_SRC}/shared/ksi_include/ksi_exceptions.hpp)
+
+IF(WIN32)
+	ADD_DEFINITIONS (-D_WIN32_BUILD_)
+ENDIF (WIN32)
+
+IF (UNIX)
+	ADD_DEFINITIONS (-D_UNIX_BUILD_)
+ENDIF (UNIX)
+
+SET (Boost_USE_STATIC_LIBS ON)
+SET (Boost_USE_MULTITHREAD OFF)
+FIND_PACKAGE (Boost COMPONENTS system)
+
+IF (NOT Boost_FOUND)
+	MESSAGE (FATAL_ERROR "boost library not found")
+ENDIF (NOT Boost_FOUND)
+
+MESSAGE (STATUS "Boost include directory: ${Boost_INCLUDE_DIR}")
+MESSAGE (STATUS "system lib found: ${Boost_SYSTEM_LIBRARY}")
+
+INCLUDE_DIRECTORIES (${Boost_INCLUDE_DIR} $ENV{CAFE_SRC}/shared)
+LINK_DIRECTORIES (${Boost_LIBRARY_DIRS})
+LINK_LIBRARIES (${Boost_SYSTEM_LIBRARY})
+
+SET (CMAKE_SHARED_LINKER_FLAGS_RELEASE " -Wl,--allow-multiple-definition -Wl,--enable-auto-import ")
+ADD_LIBRARY (serial-s STATIC ${C_FILES})
+#ADD_LIBRARY (serial SHARED ${C_FILES})

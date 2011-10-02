@@ -1,0 +1,19 @@
+
+IF (SOURCE_FILES)
+	execute_process(COMMAND cmake -DSOURCE_FILES=1 -G${CMAKE_GENERATOR} WORKING_DIRECTORY $ENV{CAFE_SRC}/shared/ksi_libpos)		
+	RETURN()
+ELSE (SOURCE_FILES)
+ENDIF (SOURCE_FILES)
+
+FIND_LIBRARY (POS_LIB NAMES pos-s PATHS $ENV{CAFE_SRC}/shared/ksi_libpos)
+
+IF (NOT POS_LIB)
+	MESSAGE (STATUS "try_compile lib_pos lib")
+	TRY_COMPILE (BUILD_POS $ENV{CAFE_SRC}/shared/ksi_libpos $ENV{CAFE_SRC}/shared/ksi_libpos HpsClientLibrary CMAKE_FLAGS -DSOURCE_FILES:UNINITIALIZED=0)
+
+	IF (NOT BUILD_POS)
+		MESSAGE (FATAL_ERROR "can't build lib_pos lib")
+	ELSE (NOT BUILD_POS)
+		MESSAGE (STATUS "compile lib_pos lib successful")
+	ENDIF (NOT BUILD_POS)
+ENDIF (NOT POS_LIB)

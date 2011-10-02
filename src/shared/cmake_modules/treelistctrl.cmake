@@ -1,0 +1,19 @@
+
+IF (SOURCE_FILES)
+	execute_process(COMMAND cmake -DSOURCE_FILES=1 -G${CMAKE_GENERATOR} WORKING_DIRECTORY $ENV{CAFE_SRC}/shared/wx_util/treelistctrl)		
+	RETURN()
+ELSE (SOURCE_FILES)
+ENDIF (SOURCE_FILES)
+
+FIND_LIBRARY (TREELISTCTRL_LIB NAMES treelistctrl-s PATHS $ENV{CAFE_SRC}/shared/wx_util/treelistctrl)
+
+IF (NOT TREELISTCTRL_LIB)
+	MESSAGE (STATUS "try_compile treelistctrl lib")
+	TRY_COMPILE (BUILD_TREELISTCTRL $ENV{CAFE_SRC}/shared/wx_util/treelistctrl $ENV{CAFE_SRC}/shared/wx_util/treelistctrl TreeListCtrlLibrary CMAKE_FLAGS -DSOURCE_FILES:UNINITIALIZED=0)
+
+	IF (NOT BUILD_TREELISTCTRL)
+		MESSAGE (FATAL_ERROR "can't build treelistctrl lib")
+	ELSE (NOT BUILD_TREELISTCTRL)	
+		MESSAGE (STATUS "compile treelistctrl lib successful")
+	ENDIF (NOT BUILD_TREELISTCTRL)	
+ENDIF (NOT TREELISTCTRL_LIB)
